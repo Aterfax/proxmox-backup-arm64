@@ -198,6 +198,8 @@ while [ "$#" -ge 1 ]; do
 	cross)
 		PACKAGE_ARCH=arm64
 		BUILD_PROFILES=${BUILD_PROFILES}",cross"
+		export CC_x86_64_unknown_linux_gnu=/usr/bin/gcc
+		export CC_aarch64_unknown_linux_gnu=/usr/bin/aarch64-linux-gnu-gcc
 		export CARGO_CFG_TARGET_ARCH=aarch64
 		export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=/usr/bin/aarch64-linux-gnu-gcc
 		export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUNNER=qemu-aarch64
