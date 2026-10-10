@@ -11,5 +11,5 @@ COPY --chown=build . /home/build/
 WORKDIR /home/build/
 
 RUN ls -l
-RUN sudo apt-get -y install $(find . -name '*.deb' ! -name '*static*.deb')
-RUN sudo proxmox-backup-manager version
+RUN sudo apt-get update && sudo apt-get -y install $(find . -name 'proxmox-backup-client_*_arm64.deb' ! -name '*static*.deb')
+RUN proxmox-backup-client version
